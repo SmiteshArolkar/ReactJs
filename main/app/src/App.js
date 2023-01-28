@@ -7,6 +7,8 @@ function App() {
   const a = 10;
   const b = 20;
   console.log(now, a + b);
+  const repo = "https://github.com/SmiteshArolkar/ReactJs"
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -27,7 +29,9 @@ function App() {
         {a} plus {b} is {a + b}
       </p>
       <Hello name="Bull" age = {a}/>
+      <Footer link = {repo}/>
     </div>
+  
   );
 }
 
@@ -38,5 +42,17 @@ const Hello = (props) => {
     </div>
   );
 };
+
+const Footer = (props) => {
+  
+  return (
+    <div>
+      <h4>
+        Page Created By Smitesh Repo  
+        <a href = {props.link} > Link</a>
+      </h4>
+    </div>
+  )
+}
 
 export default App;
