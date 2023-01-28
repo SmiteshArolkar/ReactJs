@@ -1,7 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  //Data
+  const now = new Date();
+  const a = 10;
+  const b = 20;
+  console.log(now, a + b);
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +23,20 @@ function App() {
           Learn React
         </a>
       </header>
+      <p>
+        {a} plus {b} is {a + b}
+      </p>
+      <Hello name="Bull" age = {a}/>
     </div>
   );
 }
+
+const Hello = (props) => {
+  return (
+    <div>
+      <p>Hello {props.name} You are {props.age} old.</p>
+    </div>
+  );
+};
 
 export default App;
