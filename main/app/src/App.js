@@ -36,9 +36,14 @@ function App() {
 }
 
 const Hello = (props) => {
+  const born_year = () => {
+    const yearNow = new Date().getFullYear()
+    return yearNow - props.age
+  }
   return (
     <div>
       <p>Hello {props.name} You are {props.age} old.</p>
+      <p>So you were born in {born_year()}</p>
     </div>
   );
 };
