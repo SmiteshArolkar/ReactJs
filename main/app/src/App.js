@@ -1,35 +1,22 @@
-import logo from "./logo.svg";
+
+import { useState } from "react";
 import "./App.css";
 
-function App() {
+
+function App(props) {
   //Data
   const now = new Date();
   const a = 10;
   const b = 20;
   console.log(now, a + b);
   const repo = "https://github.com/SmiteshArolkar/ReactJs"
+  const [counter ,setCounter ] = useState(0);
+
+  setTimeout(() => setCounter(counter+1),2000)
   
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <p>
-        {a} plus {b} is {a + b}
-      </p>
-      <Hello name="Bull" age = {a}/>
-      <Footer link = {repo}/>
+      {counter}
     </div>
   
   );
