@@ -10,13 +10,19 @@ function App(props) {
   const b = 20;
   console.log(now, a + b);
   const repo = "https://github.com/SmiteshArolkar/ReactJs"
-  const [counter ,setCounter ] = useState(0);
+  const [counter , setCounter ] = useState(0);
 
-  setTimeout(() => setCounter(counter+1),2000)
+  setTimeout(() => setCounter(counter+1),1000)
   
   return (
+
     <div className="App">
-      {counter}
+      
+      <button onClick={handleCheck()}>
+      <h3>
+        {counter}
+      </h3>
+      </button>
     </div>
   
   );
@@ -45,6 +51,12 @@ const Footer = (props) => {
       </h4>
     </div>
   )
+}
+
+//event handler
+
+const handleCheck = () => {
+  console.log("clicked")
 }
 
 export default App;
