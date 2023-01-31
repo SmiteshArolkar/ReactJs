@@ -12,6 +12,8 @@ function App(props) {
   const repo = "https://github.com/SmiteshArolkar/ReactJs"
   const [counter , setCounter ] = useState(0);
 
+  const setZero = () => setCounter(0)
+
   setTimeout(() => setCounter(counter+1),1000)
   
   return (
@@ -23,7 +25,13 @@ function App(props) {
         {counter}
       </h3>
       </button>
+      <div>
+        <button>
+          Reset
+        </button>
+      </div>
     </div>
+    
   
   );
 }
