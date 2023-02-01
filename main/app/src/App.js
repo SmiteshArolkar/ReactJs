@@ -2,11 +2,11 @@ import { useState } from "react";
 import "./App.css";
 
 const App = () => {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);//sets counter to 0 
 
-  const increaseByOne = () => setCounter(counter + 1);
-  const decreaseByOne = () => setCounter(counter - 1);
-  const setToZero = () => setCounter(0);
+  const increaseByOne = () => setCounter(counter + 1);//event handler
+  const decreaseByOne = () => setCounter(counter - 1);//event handler
+  const setToZero = () => setCounter(0);//event handler
 
   return (
     <div>
