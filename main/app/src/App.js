@@ -26,6 +26,7 @@ const Button = (props) => {
   return <button onClick={props.onClick}>{props.text}</button>;
 };
 
+
 // const Hello = (props) => {
 //   const born_year = () => {
 //     const yearNow = new Date().getFullYear();
