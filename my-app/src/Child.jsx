@@ -1,9 +1,8 @@
 import logo from "./logo.svg";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./App.css";
-import Post from "./post";
 
-const Child = (props) => {
+const App = () => {
   const [name, setName] = useState("Name");
   const inputRef = useRef(null);
   const changeName = (value) => {
@@ -13,7 +12,7 @@ const Child = (props) => {
 
   const submit = (e) => {
     e.preventDefault();
-    Name(inputRef.current.value);
+    Name(inputRef.current.value)
   };
 
   const dummyPromise = (name) => {
@@ -36,15 +35,18 @@ const Child = (props) => {
       });
   }
 
-  const submittoApi = async (name) => {};
+  const submittoApi = async (name) => {
+
+  }
   return (
     <>
       <div>
+        <h2>Titlle</h2>
         <form
           onSubmit={submit}
           style={{ display: "flex", flexDirection: "column", margin: "30px" }}
         >
-          <h1 style={{ textAlign: "center" }}>{props.title}</h1>
+          <h1 style={{ textAlign: "center" }}>{name}</h1>
           <input
             type="text"
             id="user-name"
@@ -65,33 +67,6 @@ const Child = (props) => {
           </button>
         </form>
       </div>
-    </>
-  );
-};
-const App = () => {
-  const [posts, setPosts] = useState(null);
-  const [isLoading,setisLoading] = useState(true);
-  const dataFetcher = async (url) => {
-      fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setPosts(data);
-        setisLoading(false);
-      });
-  };
-
-  useEffect(() => {
-    dataFetcher("https://jsonplaceholder.typicode.com/posts");
-  },[]);
-
-  return (
-    <>
-      {/* <Child title="Login"></Child>
-      <Child title="Login2"></Child> */}
-      {isLoading ? <div>Loading...</div>: (posts.map((val,key) => {
-        console.log(val.title);
-        <Post title = {val.title} body = {val.body} key = {key}/>
-      }))}
     </>
   );
 };
